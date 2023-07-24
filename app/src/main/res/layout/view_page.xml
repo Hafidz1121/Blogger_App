@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textTitleViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:text="Title View Pager"
+        android:textSize="28sp"/>
+
+    <TextView
+        android:id="@+id/textDescViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desc View Pager"
+        android:textSize="18sp"/>
+
+</LinearLayout>
