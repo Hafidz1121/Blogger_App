@@ -22,8 +22,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.blogapp.AuthActivity;
 import com.example.blogapp.Constant;
+import com.example.blogapp.HomeActivity;
 import com.example.blogapp.R;
+import com.example.blogapp.UserInfoActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -195,14 +198,14 @@ public class SignUpFragment extends Fragment {
                     editor.putString("name", user.getString("name"));
                     editor.putString("lastname", user.getString("lastname"));
                     editor.putString("photo", user.getString("photo"));
+                    editor.putBoolean("isLoggedIn", true);
                     editor.apply();
 
-                    Toast.makeText(getContext(), "Register Success", Toast.LENGTH_SHORT).show();
+                    // if login success
+                    startActivity(new Intent((AuthActivity)getContext(), UserInfoActivity.class));
+                    ((AuthActivity) getContext()).finish();
 
-                    // clear input and redirect to sign in
-                    txtEmail.setText("");
-                    txtPassword.setText("");
-                    txtConfirmPassword.setText("");
+                    Toast.makeText(getContext(), "Register Success", Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {
                 throw new RuntimeException(e);
