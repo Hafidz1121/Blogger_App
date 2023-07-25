@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
 
             // start onBoard activity
-            startActivity(new Intent(MainActivity.this, onBoardActivity.class));
+            startActivity(new Intent(MainActivity.this, OnBoardActivity.class));
             finish();
         } else {
-            startActivity(new Intent(MainActivity.this, authActivity.class));
+            startActivity(new Intent(MainActivity.this, AuthActivity.class));
             finish();
         }
     }

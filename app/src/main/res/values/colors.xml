@@ -8,4 +8,9 @@
     <color name="colorGrey">#666666</color>
     <color name="colorLightGrey">#999999</color>
     <color name="colorRed">#F44336</color>
+
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Other theme attributes -->
+        <item name="android:statusBarColor">@color/colorWhite</item>
+    </style>
 </resources>

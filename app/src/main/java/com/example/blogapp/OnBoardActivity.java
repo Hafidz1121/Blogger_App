@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.blogapp.adapters.ViewPagerAdapter;
 
-public class onBoardActivity extends AppCompatActivity {
+public class OnBoardActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private Button btnLeft, btnRight;
@@ -44,7 +44,7 @@ public class onBoardActivity extends AppCompatActivity {
             if (btnRight.getText().toString().equals("Next")) {
                 viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
             } else {
-                startActivity(new Intent(onBoardActivity.this, authActivity.class));
+                startActivity(new Intent(OnBoardActivity.this, AuthActivity.class));
                 finish();
             }
         });
