@@ -12,5 +12,15 @@
     <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <!-- Other theme attributes -->
         <item name="android:statusBarColor">@color/colorWhite</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.BottomAppBar" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Other theme attributes -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 </resources>

@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.TextView;
 import android.util.Base64;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -126,6 +127,8 @@ public class UserInfoActivity extends AppCompatActivity {
 
                     startActivity(new Intent(UserInfoActivity.this, HomeActivity.class));
                     finish();
+
+                    Toast.makeText(getApplicationContext(), "Register Complete", Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {
                 throw new RuntimeException(e);

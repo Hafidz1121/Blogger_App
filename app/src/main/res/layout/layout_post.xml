@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPostProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@color/colorLightGrey"/>
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtPostName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hafidz Fadhillah F"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/txtPostDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 - 07 - 2023 | 08:50"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorLightGrey"/>
+
+            </LinearLayout>
+            
+            <ImageButton
+                android:id="@+id/btnPostOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/baseline_more_vert_24"
+                android:contentDescription="TODO" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtPostDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ini adalah kolom untuk deskripsi postingan"
+            android:textSize="14sp"
+            android:textColor="@color/colorGrey"
+            android:padding="10dp"/>
+
+        <ImageView
+            android:id="@+id/imgPostPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@color/colorGrey"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="12dp">
+
+            <ImageButton
+                android:id="@+id/btnPostLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/baseline_favorite_border"
+                android:background="@android:color/transparent"
+                android:contentDescription="TODO" />
+
+            <ImageButton
+                android:id="@+id/btnPostComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/baseline_chat_bubble_outline"
+                android:background="@android:color/transparent"
+                android:contentDescription="TODO" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtPostLikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000 Like"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/colorGrey"
+            android:layout_marginLeft="12dp"/>
+
+        <TextView
+            android:id="@+id/txtPostComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View all 100 comments"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGrey"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="20dp"/>
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#ccc"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
