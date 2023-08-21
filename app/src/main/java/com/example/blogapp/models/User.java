@@ -2,7 +2,7 @@ package com.example.blogapp.models;
 
 public class User {
     private int id;
-    private String userName, photo;
+    private String username, photo;
 
     public int getId() {
         return id;
@@ -12,12 +12,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPhoto() {

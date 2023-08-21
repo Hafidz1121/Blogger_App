@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2196f1</color>
+    <color name="colorPrimary">#039BE5</color>
+    <color name="colorSecondary">#03A9F4</color>
     <color name="colorPrimaryDark">#dddddd</color>
     <color name="colorAccent">#2196f1</color>
     <color name="colorWhite">#FFFFFF</color>
@@ -13,14 +14,14 @@
         <!-- Other theme attributes -->
         <item name="android:statusBarColor">@color/colorWhite</item>
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorWhite</item>
     </style>
 
     <style name="AppTheme.BottomAppBar" parent="Theme.Material3.Light.NoActionBar">
         <!-- Other theme attributes -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorWhite</item>
     </style>
 </resources>

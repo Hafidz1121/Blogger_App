@@ -34,17 +34,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hafidz Fadhillah F"
-                    android:textSize="17sp"
                     android:textColor="@color/colorBlack"
-                    android:textStyle="bold"/>
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"/>
 
                 <TextView
                     android:id="@+id/txtPostDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="30 - 07 - 2023 | 08:50"
-                    android:textSize="13sp"
-                    android:textColor="@color/colorLightGrey"/>
+                    android:textColor="@color/colorLightGrey"
+                    android:textSize="14sp" />
 
             </LinearLayout>
             

@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,8 +42,8 @@ import java.util.Map;
 
 public class HomeFragment extends Fragment {
     private View view;
-    private RecyclerView recyclerView;
-    private ArrayList<Post> arrayList;
+    public static RecyclerView recyclerView;
+    public static ArrayList<Post> arrayList;
     private SwipeRefreshLayout refreshLayout;
     private PostsAdapter postsAdapter;
     private MaterialToolbar toolbar;
@@ -63,6 +67,7 @@ public class HomeFragment extends Fragment {
         refreshLayout = view.findViewById(R.id.swipeHome);
         toolbar = view.findViewById(R.id.toolbarHome);
         ((HomeActivity)getContext()).setSupportActionBar(toolbar);
+        setHasOptionsMenu(true);
 
         getPosts();
 
@@ -91,7 +96,7 @@ public class HomeFragment extends Fragment {
 
                         User user = new User();
                         user.setId(userObject.getInt("id"));
-                        user.setUserName(userObject.getString("username") + " " + userObject.getString("lastname"));
+                        user.setUsername(userObject.getString("name") + " " + userObject.getString("lastname"));
                         user.setPhoto(userObject.getString("photo"));
 
                         Post post = new Post();
@@ -127,11 +132,32 @@ public class HomeFragment extends Fragment {
                 String token = sharedPreferences.getString("token", "");
                 HashMap<String, String> map = new HashMap<>();
                 map.put("Authorization", "Bearer " + token);
-                return super.getHeaders();
+                return map;
             }
         };
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
         queue.add(request);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search, menu);
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                postsAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }

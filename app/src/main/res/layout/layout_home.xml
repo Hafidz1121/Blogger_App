@@ -9,17 +9,17 @@
         android:id="@+id/toolbarHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="1dp"
+        android:elevation="3dp"
         android:theme="@style/AppTheme.BottomAppBar"
         app:title="">
-        
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Blog App"
-            android:textSize="20sp"
-            android:textColor="@color/colorBlack"/>
-        
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+
     </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

@@ -3,8 +3,8 @@
     <style name="Base.Theme.BlogApp" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorWhite</item>
     </style>
 
     <style name="Theme.BlogApp" parent="Base.Theme.BlogApp" />

@@ -25,11 +25,11 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottom_app"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_gravity="bottom"
             android:clickable="false"
             app:fabAlignmentMode="center"
-            app:fabCradleRoundedCornerRadius="160dp"
+            app:fabCradleRoundedCornerRadius="1600dp"
             android:theme="@style/AppTheme.BottomAppBar"
             app:contentInsetStart="0dp"
             app:contentInsetStartWithNavigation="0dp"
