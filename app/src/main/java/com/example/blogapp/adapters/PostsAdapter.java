@@ -78,6 +78,66 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
         holder.txtDate.setText(post.getDate());
         holder.txtDesc.setText(post.getDesc());
 
+        holder.btnLike.setImageResource(
+                post.isSelfLike() ? R.drawable.baseline_favorite_red : R.drawable.baseline_favorite_border
+        );
+
+        holder.btnLike.setOnClickListener(v-> {
+            holder.btnLike.setImageResource(
+                    post.isSelfLike() ? R.drawable.baseline_favorite_border : R.drawable.baseline_favorite_red
+            );
+
+            StringRequest request = new StringRequest(Request.Method.POST, Constant.LIKE_POST, response -> {
+                Post mPost = list.get(position);
+
+                try {
+                    JSONObject object = new JSONObject(response);
+
+                    if (object.getBoolean("success")) {
+                        mPost.setSelfLike(!post.isSelfLike());
+                        mPost.setLikes(mPost.isSelfLike() ? post.getLikes() + 1 : post.getLikes() - 1);
+
+                        list.set(position, mPost);
+
+                        notifyItemChanged(position);
+                        notifyDataSetChanged();
+                    } else {
+                        holder.btnLike.setImageResource(
+                                post.isSelfLike() ? R.drawable.baseline_favorite_red : R.drawable.baseline_favorite_border
+                        );
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }, error -> {
+                error.printStackTrace();
+            }) {
+
+                // add token to header
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    String token = sharedPreferences.getString("token", "");
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put("Authorization", "Bearer " + token);
+
+                    return map;
+                }
+
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put("id", post.getId() + "");
+
+                    return map;
+                }
+            };
+
+            RequestQueue queue = Volley.newRequestQueue(context);
+            queue.add(request);
+        });
+
         if (post.getUser().getId() == sharedPreferences.getInt("id", 0)) {
             holder.btnPostOption.setVisibility(View.VISIBLE);
         } else {

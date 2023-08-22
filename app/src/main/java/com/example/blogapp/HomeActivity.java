@@ -28,8 +28,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void init() {
-
-
         fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(v-> {

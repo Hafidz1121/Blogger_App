@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -76,6 +77,7 @@ public class EditPostActivity extends AppCompatActivity {
                     HomeFragment.arrayList.set(position, post);
                     HomeFragment.recyclerView.getAdapter().notifyItemChanged(position);
                     HomeFragment.recyclerView.getAdapter().notifyDataSetChanged();
+                    Toast.makeText(this, "Updated", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             } catch (JSONException e) {
