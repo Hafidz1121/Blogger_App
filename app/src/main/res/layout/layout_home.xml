@@ -25,12 +25,13 @@
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="65dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerHome"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:id="@+id/recyclerHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         </androidx.recyclerview.widget.RecyclerView>
 
