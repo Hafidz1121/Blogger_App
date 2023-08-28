@@ -25,6 +25,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.blogapp.CommentActivity;
 import com.example.blogapp.Constant;
 import com.example.blogapp.EditPostActivity;
 import com.example.blogapp.HomeActivity;
@@ -78,6 +79,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
         holder.txtDate.setText(post.getDate());
         holder.txtDesc.setText(post.getDesc());
 
+        // button like
         holder.btnLike.setImageResource(
                 post.isSelfLike() ? R.drawable.baseline_favorite_red : R.drawable.baseline_favorite_border
         );
@@ -138,6 +140,20 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
             queue.add(request);
         });
 
+        // button comments
+        holder.txtComments.setOnClickListener(v-> {
+            Intent intent = new Intent(((HomeActivity) context), CommentActivity.class);
+            intent.putExtra("postId", post.getId());
+            context.startActivity(intent);
+        });
+
+        holder.btnComment.setOnClickListener(v-> {
+            Intent intent = new Intent(((HomeActivity) context), CommentActivity.class);
+            intent.putExtra("postId", post.getId());
+            context.startActivity(intent);
+        });
+
+        // button options for edit and delete
         if (post.getUser().getId() == sharedPreferences.getInt("id", 0)) {
             holder.btnPostOption.setVisibility(View.VISIBLE);
         } else {
