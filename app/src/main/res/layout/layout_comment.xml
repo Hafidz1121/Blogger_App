@@ -47,10 +47,10 @@
             </LinearLayout>
 
             <ImageButton
-                android:id="@+id/btnCommentOption"
+                android:id="@+id/btnDeleteComment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/baseline_more_vert_24"
+                android:src="@drawable/baseline_delete_forever_24"
                 android:background="@android:color/transparent"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"/>

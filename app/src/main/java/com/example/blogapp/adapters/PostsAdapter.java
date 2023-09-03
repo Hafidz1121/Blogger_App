@@ -144,12 +144,14 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
         holder.txtComments.setOnClickListener(v-> {
             Intent intent = new Intent(((HomeActivity) context), CommentActivity.class);
             intent.putExtra("postId", post.getId());
+            intent.putExtra("postPosition", position);
             context.startActivity(intent);
         });
 
         holder.btnComment.setOnClickListener(v-> {
             Intent intent = new Intent(((HomeActivity) context), CommentActivity.class);
             intent.putExtra("postId", post.getId());
+            intent.putExtra("postPosition", position);
             context.startActivity(intent);
         });
 

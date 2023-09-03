@@ -48,16 +48,6 @@
         android:background="@color/colorWhite"
         android:layout_alignParentBottom="true">
 
-        <ImageButton
-            android:id="@+id/btnCancelComment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_close_24"
-            android:background="@android:color/transparent"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="4dp"
-            android:layout_gravity="center_vertical"/>
-
         <EditText
             android:id="@+id/txtAddComment"
             android:layout_width="0dp"
@@ -74,6 +64,7 @@
             android:id="@+id/btnAddComment"
             android:layout_width="65dp"
             android:layout_height="30dp"
+            android:onClick="addComment"
             android:src="@drawable/baseline_send_24"
             android:background="@color/colorPrimary"
             android:layout_gravity="center_vertical"
