@@ -28,6 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.blogapp.AuthActivity;
 import com.example.blogapp.Constant;
+import com.example.blogapp.EditUserInfoActivity;
 import com.example.blogapp.HomeActivity;
 import com.example.blogapp.R;
 import com.example.blogapp.adapters.AccountPostAdapter;
@@ -55,6 +56,7 @@ public class AccountFragment extends Fragment {
     private ArrayList<Post> arrayList;
     private SharedPreferences preferences;
     private AccountPostAdapter adapter;
+    private String imgUrl = "";
 
     public AccountFragment() {
 
@@ -83,7 +85,11 @@ public class AccountFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
-        getData();
+        btnEditAcc.setOnClickListener(v-> {
+            Intent i = new Intent(((HomeActivity)getContext()), EditUserInfoActivity.class);
+            i.putExtra("imgUrl", imgUrl);
+            startActivity(i);
+        });
     }
 
     private void getData() {
@@ -113,6 +119,8 @@ public class AccountFragment extends Fragment {
 
                     adapter = new AccountPostAdapter(getContext(), arrayList);
                     recyclerView.setAdapter(adapter);
+
+                    imgUrl = Constant.URL + "storage/profiles/" + user.getString("photo");
                 }
 
             } catch (JSONException e) {
@@ -209,5 +217,11 @@ public class AccountFragment extends Fragment {
         }
 
         super.onHiddenChanged(hidden);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getData();
     }
 }
